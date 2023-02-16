@@ -1,4 +1,11 @@
+<script lang="ts">
+  import IonPage from "ionic-svelte/components/IonPage.svelte";
 
+
+
+</script>
+
+<IonPage>
   <ion-card>
 	<ion-card-header>
 		<ion-card-subtitle>Great success!!</ion-card-subtitle>
@@ -41,6 +48,7 @@
 			>View</ion-button
 		>
 	</ion-item>
-</ion-card>
+  </ion-card>
 
+</IonPage>
   
