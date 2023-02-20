@@ -7,7 +7,7 @@ const server = process.argv.includes('-hmr') ? {
   'url': 'http://100.115.92.203:5173',   // always have http:// in url
   'cleartext': true
 } : {};
-const webDir = 'build';
+const webDir = 'public';
 
 const config: CapacitorConfig = {
   appId,
