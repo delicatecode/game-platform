@@ -6,7 +6,24 @@
 </script>
 
 <IonPage>
-  <ion-card>
+  <ion-header>
+	<ion-toolbar>
+	  <ion-title>
+		ちょこっとゲーム
+	  </ion-title>
+	</ion-toolbar>
+  </ion-header>
+  <ion-content fullscreen={true}>
+	<ion-item
+	  router-direction={'forward'}
+	  href={'/adadadas'}
+	>
+	  youtube
+	</ion-item>
+  </ion-content>
+</IonPage>
+  
+  <!-- <ion-card>
 	<ion-card-header>
 		<ion-card-subtitle>Great success!!</ion-card-subtitle>
 		<ion-card-title>Welcome to your app!</ion-card-title>
@@ -48,7 +65,4 @@
 			>View</ion-button
 		>
 	</ion-item>
-  </ion-card>
-
-</IonPage>
-  
+  </ion-card> -->

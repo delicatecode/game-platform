@@ -44,5 +44,9 @@
 </script>
 
 <ion-app>
-	<slot />
+  <ion-split-pane content-id="main">
+	<div class="ion-page" id="main">
+	  <slot />
+	</div>
+  </ion-split-pane>
 </ion-app>
