@@ -1,0 +1,7 @@
+{
+  "name": "game-platform",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

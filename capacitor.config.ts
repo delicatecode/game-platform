@@ -1,7 +1,7 @@
 
 import { CapacitorConfig } from '@capacitor/cli';
 
-const appId = 'game-platform.ionic.io';
+const appId = 'com.example.app';
 const appName = 'game-platform';
 const server = process.argv.includes('-hmr') ? {
   'url': 'http://100.115.92.203:5173',   // always have http:// in url
