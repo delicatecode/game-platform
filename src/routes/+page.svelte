@@ -1,6 +1,5 @@
 <script lang="ts">
-  import IonPage from "ionic-svelte/components/IonPage.svelte";
-
+import { IonPage } from "ionic-svelte";
 
 
 </script>
@@ -14,12 +13,14 @@
 	</ion-toolbar>
   </ion-header>
   <ion-content fullscreen={true}>
-	<ion-item
-	  router-direction={'forward'}
-	  href={'/adadadas'}
-	>
-	  youtube
-	</ion-item>
+	<ion-segment value="default">
+		<ion-segment-button value="default">
+		  <ion-label>ゲーム</ion-label>
+		</ion-segment-button>
+		<ion-segment-button value="segment">
+		  <ion-label>記事</ion-label>
+		</ion-segment-button>
+	  </ion-segment>
   </ion-content>
 </IonPage>
   
