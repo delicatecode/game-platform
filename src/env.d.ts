@@ -24,10 +24,9 @@ interface ImportMetaEnv {
     readonly VITE_FIREBASE_APPID: string;
     readonly VITE_FIREBASE_MEASUREMENTID: string;
 
-    readonly VITE_WEMODEL_API_VERSION: string;
-    readonly VITE_WEMODEL_API_URL: string;
+    readonly VITE_SUPABASE_URL: string;
+    readonly VITE_SUPABASE_ANON_KEY: string;
 
-    readonly VITE_MODELUSER_PUBLICURL: string;
   }
   
   
