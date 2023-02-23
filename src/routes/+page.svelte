@@ -1,5 +1,8 @@
 <script lang="ts">
 import { IonPage } from "ionic-svelte";
+import type { PageData } from "./$types";
+
+export let data: PageData;
 
 
 </script>
@@ -14,13 +17,14 @@ import { IonPage } from "ionic-svelte";
   </ion-header>
   <ion-content fullscreen={true}>
 	<ion-segment value="default">
-		<ion-segment-button value="default">
-		  <ion-label>ゲーム</ion-label>
-		</ion-segment-button>
-		<ion-segment-button value="segment">
-		  <ion-label>記事</ion-label>
-		</ion-segment-button>
-	  </ion-segment>
+	  <ion-segment-button value="default">
+	    <ion-label>ゲーム</ion-label>
+	  </ion-segment-button>
+	  <ion-segment-button value="segment">
+	    <ion-label>記事</ion-label>
+	  </ion-segment-button>
+	</ion-segment>
+	{JSON.stringify(data.post)}
   </ion-content>
 </IonPage>
   

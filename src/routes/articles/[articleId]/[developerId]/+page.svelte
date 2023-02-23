@@ -1,6 +1,13 @@
 
 <script lang="ts">
-	import { IonPage } from "ionic-svelte";
+  /* svelte */
+  import type { PageData } from "./$types";
+
+  /* ionic */
+  import { IonPage } from "ionic-svelte";
+
+
+  let data: PageData;
 
 
 </script>

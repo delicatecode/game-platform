@@ -1,5 +1,11 @@
 
 
-export default class ArticleRepository {
+interface IArticleRepository {
+
+}
+
+
+
+export default class ArticleRepository implements IArticleRepository {
   constructor () {}
 }

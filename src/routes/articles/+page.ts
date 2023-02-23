@@ -1,3 +1,11 @@
+import type { PageLoad } from "../$types";
 
 
-export {}
+/**
+ * DI
+ */
+
+
+export const load: PageLoad = async () => {
+  return {}
+}
