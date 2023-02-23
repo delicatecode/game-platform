@@ -4,6 +4,7 @@ import type { Image } from './image';
 
 
 export type Game = {
+  gameId: string;
   title: string;
   description: string;
   scriptTag: string;

@@ -1,24 +1,25 @@
-
-
-
-interface IGameRepository {
-  getAll: () => void;
-  get: (developerId: string, gameId: string) => void;
-}
+/* app */
+import type { GamePresenter } from "../presenters/game";
+import type { Game } from "../types/game";
 
 
 
 
 
-export default class GameRepository implements IGameRepository {
+export default class GameRepository implements GamePresenter {
+
   constructor () {}
 
 
-  getAll () {
+  getAll (): Promise<Game[]> {
+    return new Promise(async (resolve, reject) => {
 
+    })
   }
 
-  get (developerId: string, gameId: string) {
+  get (gameId: string): Promise<Game> {
+    return new Promise(async (resolve, reject) => {
 
+    })
   }
 }

@@ -1,18 +1,13 @@
 /* app */
+import type ArticleRepository from "../repositories/article";
 import type DeveloperRepository from "../repositories/developer";
 import type GameRepository from "../repositories/game";
 
 
-
-
-export default class GameUsecase {
+export default class DeveloperUsecase {
   constructor (
-    private game: GameRepository,
     private developer: DeveloperRepository,
+    private game: GameRepository,
+    private article: ArticleRepository,
   ) {}
-
-  getAll () {
-
-  }
-
 }

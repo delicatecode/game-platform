@@ -1,4 +1,4 @@
-import type { PageLoad } from "../$types";
+import type { PageLoad } from "./$types";
 
 
 /**
@@ -6,6 +6,12 @@ import type { PageLoad } from "../$types";
  */
 
 
-export const load: PageLoad = async () => {
-  return {}
+export const load: PageLoad = async ({ params }) => {
+
+
+  return {
+    props: {
+      title: params.gameId,
+    }
+  }
 }
