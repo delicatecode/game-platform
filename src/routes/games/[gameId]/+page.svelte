@@ -15,9 +15,17 @@
 <IonPage>
   <ion-header>
     <ion-toolbar>
+      <ion-buttons slot="start">
+        <a href={'/'}>
+          <button>戻る</button>
+        </a>
+      </ion-buttons>
       <ion-title>
-        {data.props.title}
+        {data.game.title}
       </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content fullscreen={true}>
+    {JSON.stringify(data.game)}
+  </ion-content>
 </IonPage>

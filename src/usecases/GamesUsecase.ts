@@ -29,9 +29,47 @@ export default class GamesUsecase {
         if (data) {
           resolve(data)
         } else {
-          resolve([])
+          try {
+            const games = await this.game.getAll();
+            const data = games.map(game => {
+              return {
+                ...game,
+                developer: {
+                  developerId: '',
+                  codeName: '',
+                  profileImage: {
+                    imageId: '',
+                    url: ''
+                  },
+                  biography: ''
+                }
+              } as GameResponse
+            }) as GameResponse[]
+            resolve(data)
+
+          } catch (e) {
+            resolve([])
+          }
         }
 
+      } catch (e) {
+        reject(e);
+      }
+    })
+  }
+
+
+  /**
+   * @method
+   * @param data
+   * @returns 
+   */
+  get (gameId: string, data?: GameResponse): Promise<GameResponse> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        if (data) {
+          resolve(data)
+        }
       } catch (e) {
         reject(e);
       }

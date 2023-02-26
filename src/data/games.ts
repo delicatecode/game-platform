@@ -7,16 +7,21 @@ export const data: GameResponse[] = [
     title: 'じゃんけん',
     thumbnailImage: {
       imageId: '',
-      url: '',
+      url: 'https://ionicframework.com/docs/img/demos/card-media.png',
     },
     category: {
       name: '',
       slug: ''
     },
+    description: '',
+    subTitle: 'シンプルじゃんけんゲームです',
     developer: {
       developerId: 'aaaaaaa',
       codeName: 'kubocker',
-      profileImage: { src: '' },
+      profileImage: {
+        imageId: '',
+        url: '',
+      },
       biography: 'bbbbbbbbbbbb',
     }
   },
@@ -26,16 +31,21 @@ export const data: GameResponse[] = [
     title: 'ポーカー',
     thumbnailImage: {
       imageId: '',
-      url: '',
+      url: 'https://ionicframework.com/docs/img/demos/card-media.png',
     },
     category: {
       name: '',
       slug: ''
     },
+    description: '',
+    subTitle: '',
     developer: {
       developerId: 'aaaaaaa',
       codeName: 'kubocker',
-      profileImage: { src: '' },
+      profileImage: {
+        imageId: '',
+        url: '',
+      },
       biography: 'bbbbbbbbbbbb',
     }
   },
@@ -45,16 +55,21 @@ export const data: GameResponse[] = [
     title: 'ハイアンドロー',
     thumbnailImage: {
       imageId: '',
-      url: '',
+      url: 'https://ionicframework.com/docs/img/demos/card-media.png',
     },
     category: {
       name: '',
       slug: ''
     },
+    description: '',
+    subTitle: '',
     developer: {
       developerId: 'bbbbbbbb',
       codeName: 'shinriyo',
-      profileImage: { src: '' },
+      profileImage: {
+        imageId: '',
+        url: '',
+      },
       biography: 'ccccccccccccccccc',
     }
   }

@@ -3,9 +3,13 @@ import type { Category } from './category';
 import type { Image } from './image';
 
 
+/**
+ * @type
+ */
 export type Game = {
   gameId: string;
   title: string;
+  subTitle?: string;
   description: string;
   scriptTag: string;
   category: Category

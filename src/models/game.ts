@@ -17,8 +17,10 @@ export type GameResponse = Pick<
     Game,
   | 'gameId'
   | 'title'
+  | 'subTitle'
   | 'thumbnailImage'
   | 'category'
+  | 'description'
 > & {
   developer: GameDeveloper;
 }
