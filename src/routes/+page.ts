@@ -29,7 +29,7 @@ const example = new ExampleRepository();
 
 
 export const load: PageLoad = async () => {
-  const games = await repository1.getAll(gamesData);
+  const games = await repository1.getAll();
   const articles = await repository2.getAll(articlesData);
 //   alert(JSON.stringify(games))
 

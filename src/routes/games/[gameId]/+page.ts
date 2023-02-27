@@ -20,9 +20,10 @@ const repository = new GamesUsecase(
 export const load: PageLoad = async ({ params }) => {
 
   const gameId = params.gameId;
-  const game = await repository.get(gameId, data[0]);
+  // const game = await repository.get(gameId);
 
   return {
-    game,
+    // game,
+    gameId
   }
 }

@@ -69,6 +69,21 @@ export default class GamesUsecase {
       try {
         if (data) {
           resolve(data)
+        } else {
+          const game = await this.game.get(gameId);
+          const data = {
+            ...game,
+            developer: {
+              developerId: '',
+              codeName: '',
+              profileImage: {
+                imageId: '',
+                url: ''
+              },
+              biography: ''
+            }
+          } as GameResponse;
+          resolve(data)
         }
       } catch (e) {
         reject(e);

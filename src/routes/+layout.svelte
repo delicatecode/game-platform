@@ -50,3 +50,9 @@
 	</div>
   </ion-split-pane>
 </ion-app>
+
+<style>
+  #main {
+	margin: 0 auto;
+  }
+</style>
