@@ -29,16 +29,16 @@ const example = new ExampleRepository();
 
 
 export const load: PageLoad = async () => {
-  const games = await repository1.getAll();
+  const games = await repository1.getAll(gamesData);
   const articles = await repository2.getAll(articlesData);
 //   alert(JSON.stringify(games))
 
-  const lock = await example.get('youtube')
+  // const lock = await example.get('youtube')
   return {
     games,
     articles,
-    data: {
-      example: lock
-    }
+    // data: {
+    //   example: lock
+    // }
   }
 }
