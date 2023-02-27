@@ -25,6 +25,7 @@
 	curTab.set('articles');
   }
 
+  let html = '<div id="#app"></div><script type="module" src="https://first-feather.surge.sh/assets/index-576030ec.js">/<script>'
 
 </script>
 
@@ -59,7 +60,15 @@
 	  <ArticleList items={data.articles} />
 	{/if}
 
-	{JSON.stringify(data.data.example)}
+    <div
+	    contenteditable="true"
+	    bind:innerHTML={html}
+    ></div>
+    <!-- <AnchorFm
+      height="400"
+      episodeUrl={html}
+    /> -->
+    {@html html}
   </ion-content>
 </IonPage>
   
