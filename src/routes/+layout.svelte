@@ -1,6 +1,5 @@
 <script lang='ts'>
 	import { setupIonicBase } from 'ionic-svelte';
-
 	/* Call Ionic's setup routine */
 	setupIonicBase();
 
@@ -41,18 +40,24 @@
 		Want to know what is happening more - follow me on Twitter - https://twitter.com/Tommertomm
 		Discord channel on Ionic server - https://discordapp.com/channels/520266681499779082/1049388501629681675
 	*/
+	import { SvelteUIProvider } from '@svelteuidev/core';
 </script>
 
 <ion-app>
   <ion-split-pane content-id="main">
-	<div class="ion-page" id="main">
-	  <slot />
-	</div>
+    <div class="ion-page" id="main">
+      <SvelteUIProvider
+        withNormalizeCSS
+    	withGlobalStyles
+      >
+        <slot />
+      </SvelteUIProvider>
+    </div>
   </ion-split-pane>
 </ion-app>
 
 <style>
   #main {
-	margin: 0 auto;
+	/* margin: 0 auto; */
   }
 </style>

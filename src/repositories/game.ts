@@ -1,6 +1,8 @@
 /* firebase */
 import {
   collection,
+  doc,
+  getDoc,
   getDocs,
   getFirestore,
   query,
@@ -9,7 +11,7 @@ import {
 /* app */
 import supabase from '../lib/supabase/client';
 import { app } from '../lib/firebase/client';
-import type { GameResponse } from '../models/game';
+import type { GameDetailResponse, GameResponse } from '../models/game';
 import type { GamePresenter } from "../presenters/game";
 import type { Game } from "../types/game";
 
@@ -21,9 +23,16 @@ const col = 'games';
 
 export default class GameRepository implements GamePresenter {
 
+  /**
+   * @constructor
+   */
   constructor () {}
 
 
+  /**
+   * @method
+   * @return Promise<Game[]>
+   */
   getAll (): Promise<Game[]> {
     const fs = getFirestore(app);
     return new Promise(async (resolve, reject) => {
@@ -57,18 +66,57 @@ export default class GameRepository implements GamePresenter {
     })
   }
 
+
+  /**
+   * 
+   * @param gameId
+   * @returns 
+   */
   get (gameId: string): Promise<Game> {
     const fs = getFirestore(app);
     return new Promise(async (resolve, reject) => {
-      const { data, error } = await supabase
-        .from("Game")
-        .select()
-        .match({ gameId })
-        .single()
-      if (error) {
-        reject(error)
-      } else {
-        resolve(data as Game)
+      // const { data, error } = await supabase
+      //   .from("Game")
+      //   .select()
+      //   .match({ gameId })
+      //   .single()
+      // if (error) {
+      //   reject(error)
+      // } else {
+      //   resolve(data as Game)
+      // }
+      const path = `${col}/${gameId}`;
+      try {
+        const docRef = await doc(fs, path)
+        const res = await getDoc(docRef)
+        if (res.exists()) {
+          const data = await res.data() as Game;
+          resolve(data)
+        } else {
+          resolve({
+            gameId: '',
+            developerId: '',
+            title: '',
+            thumbnailImage: {
+              imageId: '',
+              url: '',
+            },
+            category: {
+              name: '',
+              slug: ''
+            },
+            subTitle: '',
+            url: '',
+            ruleDescription: '',
+            coverImage: {
+              imageId: '',
+              url: '',
+            },
+            updatedAt: new Date(),
+          })
+        }
+      } catch (err) {
+        reject(err);
       }
     })
   }

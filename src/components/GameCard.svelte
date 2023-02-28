@@ -1,14 +1,9 @@
 
 <script lang="ts">
-
   /* svelte */
-  import { createEventDispatcher } from "svelte";
-
   /* app */
   import type { GameResponse } from "../models/game";
 
-
-  const dispatch = createEventDispatcher<{ navigateTo: string }>();
 
   /**
    * 流し込む
@@ -17,15 +12,11 @@
 
 
 
-  function onNavigate() {
-    dispatch('navigateTo', item.gameId);
-  }
-
 </script>
 
 
 
-<ion-card>
+<ion-card class="card">
   <a class="card__nav" href={`/games/${item.gameId}`}>
     <img
       alt={item.thumbnailImage.imageId}
@@ -51,6 +42,21 @@
 
 
 <style>
+  .card {
+    width: calc(50% - 6px);
+    cursor: pointer;
+    display: block;
+    position: relative;
+    margin: 0 12px 12px 0;
+    transition: .4s;
+    box-shadow: none;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .card:hover {
+    background-color: rgba(245, 245, 245, 1);
+  }
   .card__nav {
     text-decoration: none;
   }

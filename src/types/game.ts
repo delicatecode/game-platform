@@ -8,10 +8,12 @@ import type { Image } from './image';
  */
 export type Game = {
   gameId: string;
+  developerId: string;
   title: string;
   subTitle?: string;
-  description: string;
-  scriptTag: string;
+  ruleDescription: string;
+  url: string;
+  scriptTag?: string;
   category: Category
   thumbnailImage: Image;
   coverImage: Image;

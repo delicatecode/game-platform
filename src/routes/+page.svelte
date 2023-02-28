@@ -25,8 +25,6 @@
 	curTab.set('articles');
   }
 
-  let html = '<div id="#app"></div><script type="module" src="https://first-feather.surge.sh/assets/index-576030ec.js">/<script>'
-
 </script>
 
 <IonPage>
@@ -37,38 +35,34 @@
 	  </ion-title>
 	</ion-toolbar>
   </ion-header>
-  <ion-content fullscreen={true}>
-	<ion-segment value="default">
-	  <ion-segment-button
-	  	value="default"
-		on:click={selectGame}
-	  >
-	    <ion-label>ゲーム</ion-label>
-	  </ion-segment-button>
-	  <ion-segment-button
-	  	value="segment"
-		on:click={selectArticles}
-	  >
-	    <ion-label>記事</ion-label>
-	  </ion-segment-button>
-	</ion-segment>
-	{#if currentTab === 'games'}
-	  <GameList items={data.games} />
-	{/if}
+  <ion-content fullscreen={true} class="contentApp">
+	  <ion-segment value="default">
+	    <ion-segment-button
+	    	value="default"
+        on:click={selectGame}
+	    >
+	      <ion-label>ゲーム</ion-label>
+	    </ion-segment-button>
+	    <ion-segment-button
+	    	value="segment"
+        on:click={selectArticles}
+	    >
+	      <ion-label>記事</ion-label>
+	    </ion-segment-button>
+	  </ion-segment>
+	  {#if currentTab === 'games'}
+	    <GameList items={data.games} />
+	  {/if}
 
-	{#if currentTab === 'article'}
-	  <ArticleList items={data.articles} />
-	{/if}
-
-    <div
-	    contenteditable="true"
-	    bind:innerHTML={html}
-    ></div>
-    <!-- <AnchorFm
-      height="400"
-      episodeUrl={html}
-    /> -->
-    {@html html}
+	  {#if currentTab === 'article'}
+	    <ArticleList items={data.articles} />
+	  {/if}
   </ion-content>
 </IonPage>
-  
+ 
+
+<style>
+  .contentApp {
+    margin: 0 auto;
+  }
+</style>

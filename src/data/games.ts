@@ -13,8 +13,8 @@ export const data: GameResponse[] = [
       name: '',
       slug: ''
     },
-    description: '',
     subTitle: 'シンプルじゃんけんゲームです',
+    url: 'https://first-feather.surge.sh',
     developer: {
       developerId: 'aaaaaaa',
       codeName: 'kubocker',
@@ -37,8 +37,8 @@ export const data: GameResponse[] = [
       name: '',
       slug: ''
     },
-    description: '',
     subTitle: '',
+    url: '',
     developer: {
       developerId: 'aaaaaaa',
       codeName: 'kubocker',
@@ -61,8 +61,8 @@ export const data: GameResponse[] = [
       name: '',
       slug: ''
     },
-    description: '',
     subTitle: '',
+    url: '',
     developer: {
       developerId: 'bbbbbbbb',
       codeName: 'shinriyo',

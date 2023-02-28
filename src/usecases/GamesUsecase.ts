@@ -1,5 +1,5 @@
 /* app */
-import type { GameResponse } from "../models/game";
+import type { GameDetailResponse, GameResponse } from "../models/game";
 import type DeveloperRepository from "../repositories/developer";
 import type GameRepository from "../repositories/game";
 
@@ -64,13 +64,14 @@ export default class GamesUsecase {
    * @param data
    * @returns 
    */
-  get (gameId: string, data?: GameResponse): Promise<GameResponse> {
+  get (gameId: string, data?: GameDetailResponse): Promise<GameDetailResponse> {
     return new Promise(async (resolve, reject) => {
       try {
         if (data) {
           resolve(data)
         } else {
           const game = await this.game.get(gameId);
+          const developer = await this.developer.get(game.developerId)
           const data = {
             ...game,
             developer: {
@@ -82,10 +83,11 @@ export default class GamesUsecase {
               },
               biography: ''
             }
-          } as GameResponse;
+          } as GameDetailResponse;
           resolve(data)
         }
       } catch (e) {
+        alert(JSON.stringify(e))
         reject(e);
       }
     })

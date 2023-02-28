@@ -2,15 +2,16 @@
 <script lang="ts">
   /* svelte */
   import type { PageData } from "./$types";
-  import { AnchorFm } from 'sveltekit-embed'
 
   /* ionic */
   import { IonPage } from "ionic-svelte";
 
+  /* app */
+  import GameDetail from "../../../components/GameDetail.svelte";
+
 
   export let data: PageData;
 
-  let html = '<div id="#app"></div><script type="module" src="https://first-feather.surge.sh/assets/index-576030ec.js">/<script>'
 
 
 </script>
@@ -24,19 +25,17 @@
         </a>
       </ion-buttons>
       <ion-title>
-        {data.gameId}
+        {data.game.title}
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content fullscreen={true}>
-    <div
-	    contenteditable="true"
-	    bind:innerHTML={html}
-    ></div>
-    <!-- <AnchorFm
-      height="400"
-      episodeUrl={html}
-    /> -->
-    {@html html}
+  <ion-content fullscreen={true} class="contentApp">
+    <GameDetail item={data.game} />
   </ion-content>
 </IonPage>
+
+<style>
+  .contentApp {
+    margin: 0 auto;
+  }
+</style>

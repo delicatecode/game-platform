@@ -20,11 +20,15 @@ export type GameResponse = Pick<
   | 'subTitle'
   | 'thumbnailImage'
   | 'category'
-  | 'description'
+  | 'url'
 > & {
   developer: GameDeveloper;
 }
 
-// export interface GameResponse extends Game {
-//   developer: GameDeveloper;
-// }
+
+export type GameDetailResponse = Omit<
+    Game,
+  | 'createdAt'
+> & {
+  developer: GameDeveloper;
+}
