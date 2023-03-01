@@ -2,6 +2,9 @@
   /* svelte */
   import type { PageData } from "./$types";
 
+  /* svelteui */
+  import { Tabs } from "@svelteuidev/core";
+
   /* ionic */
   import { IonPage } from "ionic-svelte";
 
@@ -36,27 +39,24 @@
 	</ion-toolbar>
   </ion-header>
   <ion-content fullscreen={true} class="contentApp">
-	  <ion-segment value="default">
-	    <ion-segment-button
-	    	value="default"
-        on:click={selectGame}
-	    >
-	      <ion-label>ゲーム</ion-label>
-	    </ion-segment-button>
-	    <ion-segment-button
-	    	value="segment"
-        on:click={selectArticles}
-	    >
-	      <ion-label>記事</ion-label>
-	    </ion-segment-button>
-	  </ion-segment>
-	  {#if currentTab === 'games'}
-	    <GameList items={data.games} />
-	  {/if}
-
-	  {#if currentTab === 'article'}
-	    <ArticleList items={data.articles} />
-	  {/if}
+	<Tabs
+	  grow
+	  variant="pills"
+	  position="center"
+	>
+	  <Tabs.Tab
+	  	label="ゲーム"
+      	on:click={selectGame}
+	  >
+	  	<GameList items={data.games} />
+	  </Tabs.Tab>
+	  <Tabs.Tab
+	    label="記事"
+      	on:click={selectArticles}
+	  >
+	  	<ArticleList items={data.articles} />
+	  </Tabs.Tab>
+	</Tabs>
   </ion-content>
 </IonPage>
  

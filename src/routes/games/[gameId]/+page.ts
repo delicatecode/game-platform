@@ -5,7 +5,6 @@ import type { PageLoad } from "./$types";
 import DeveloperRepository from "../../../repositories/developer";
 import GameRepository from "../../../repositories/game";
 import GamesUsecase from "../../../usecases/GamesUsecase";
-import { data } from "../../../data/game";
 
 
 /**
@@ -22,7 +21,12 @@ export const load: PageLoad = async ({ params }) => {
   const gameId = params.gameId;
   const game = await repository.get(gameId);
 
+  console.log(game.developer);
+
   return {
+    params: {
+      gameId,
+    },
     game,
   }
 }

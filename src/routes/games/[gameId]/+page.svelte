@@ -8,6 +8,7 @@
 
   /* app */
   import GameDetail from "../../../components/GameDetail.svelte";
+	import { Button } from "@svelteuidev/core";
 
 
   export let data: PageData;
@@ -21,7 +22,12 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <a href={'/'}>
-          <button>戻る</button>
+          <Button
+            color="pink"
+            variant="subtle" 
+          >
+            戻る
+          </Button>
         </a>
       </ion-buttons>
       <ion-title>

@@ -72,17 +72,10 @@ export default class GamesUsecase {
         } else {
           const game = await this.game.get(gameId);
           const developer = await this.developer.get(game.developerId)
+          console.log(developer)
           const data = {
             ...game,
-            developer: {
-              developerId: '',
-              codeName: '',
-              profileImage: {
-                imageId: '',
-                url: ''
-              },
-              biography: ''
-            }
+            developer,
           } as GameDetailResponse;
           resolve(data)
         }

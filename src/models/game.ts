@@ -3,7 +3,7 @@ import type { Developer } from "../types/developer";
 import type { Game } from "../types/game";
 
 
-type GameDeveloper = Pick<
+export type GameDeveloper = Pick<
     Developer,
   | 'developerId'
   | 'codeName'

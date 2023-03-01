@@ -1,32 +1,45 @@
 
 <script lang="ts">
+  /* svelteuiu */
+  import { Group, Title, Stack } from "@svelteuidev/core";
+
+  /* app */
   import type { GameDetailResponse } from "../models/game";
+	import DeveloperCard from "./DeveloperCard.svelte";
 
 
   export let item: GameDetailResponse;
 </script>
 
 
-<section class="title">
-  <h1>{item.title}</h1>
-</section>
+<Stack align="center"
+>
+  <Group position="left">
+    <Title>{item.title}</Title>
+  </Group>
+  <section class="description">
+    {@html item.ruleDescription}
+  </section>
+  <Group position="center">
+    <!-- <iframe
+      width="1000"
+      height="1000"
+      style="display:block;margin:0 auto"
+      title={item.title}
+      src={item.url}
+      scrolling="no"
+      frameborder="no"
+      allowfullscreen>
+    </iframe> -->
+  </Group>
+  <DeveloperCard
+    item={item.developer}
+    navigateTo={`/games/${item.gameId}/${item.developer.developerId}`}
+  />
+</Stack>
 
-<section class="description">
-  {@html item.ruleDescription}
-</section>
 
-<section>
-  <iframe
-    width="850"
-    height="600"
-    style="display:block;margin:0px auto"
-    title={item.title}
-    src={item.url}
-    scrolling="no"
-    frameborder="no"
-    allowfullscreen>
-  </iframe>
-</section>
+
 
 
 <style>

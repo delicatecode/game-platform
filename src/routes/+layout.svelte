@@ -9,6 +9,7 @@
 	/* Theme variables */
 	import '../theme/variables.css';
 
+	import '../global.css';
 	/*
 		This part - import 'ionic-svelte/components/all'; -  loads all components at once.
 
@@ -56,8 +57,6 @@
   </ion-split-pane>
 </ion-app>
 
+
 <style>
-  #main {
-	/* margin: 0 auto; */
-  }
 </style>
